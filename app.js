@@ -1,4 +1,5 @@
 const {app, express} = require('./config/server');
+const http = require('http');
 
 app.use(express.static(__dirname + '/app/public'));
 
@@ -6,25 +7,22 @@ app.get('/', function(req,res){
     res.render('pages/index');
 });
 
+app.post('/', function(req,res){
+    http.get('http://www.transparencia.gov.br/api-de-dados/servidores/por-orgao?Pagina=1', (resp) => {
+      let data = '';
+       
+      resp.on('data', (chunk) => {
+        data += chunk;
+      });
 
-var request = require('request');
-request('http://www.transparencia.gov.br/api-de-dados/servidores/por-orgao?Pagina=1', function (error, response, body) {
-  const options = {
-    url: 'http://www.transparencia.gov.br/api-de-dados/servidores/por-orgao?Pagina=1',
-    headers: {
-      'User-Agent': 'request',
-      'method': 'POST'
-    }
-  };
-  
-  function callback(error, response, body) {
-    if (!error && response.statusCode == 200) {
-        const info = JSON.parse(body);
-        console.log(info);
-    }
-  }
-  
-  request(options, callback);
+      
+      resp.on('end', () => {
+        res.render('pages/result', {info: JSON.parse(data)});
+      });
+
+    }).on("error", (err) => {
+      res.render('pages/index');
+    });
 });
 
 app.listen(3000);

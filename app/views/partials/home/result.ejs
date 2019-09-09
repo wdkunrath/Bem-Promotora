@@ -1,0 +1,37 @@
+<section i="resultado" class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Critério de escolha:</h1>
+      <p>Foi escolhida a api: /api-de-dados/servidores/por-orgao, Filtros mínimos: Página (padrão = 1).</p>
+      <ol>
+        <li>api: escolhida devido facilidade de filtros</li>
+        <li>dados: sem necessidade de dados pessoais</li>
+      </ol>
+    </div>
+    <div class="col-12">
+      <h2 class="text-center">Consulta de servidores agregados por órgão</h2>
+      <a class="text-right" href="http://localhost:3000/">Voltar</a>
+      <br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Quantas Pessoas</th>
+            <th scope="col">Quantos Vinculos</th>
+            <th scope="col">Tipo Servidor</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% info.forEach(function(i) { %>
+          <tr>
+            <td><%= i.qntPessoas %></td>
+            <td><%= i.nomOrgaoExercicioSiape %></td>
+            <td><%= i.descTipoServidor %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <a class="text-right" href="http://localhost:3000/">Voltar</a>
+    </div>
+  </div>  
+</section>
+

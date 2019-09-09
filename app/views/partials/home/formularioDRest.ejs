@@ -1,0 +1,75 @@
+<section id="desafio" class="container">
+    <div class="row">
+        <div class="col-6 col-sm-12">
+            <form action="GET" id="dowload-servidor">
+                <div class="form-group">
+                    <label for="tipoPlanilha">Tipos de planilhas disponíveis em</label>
+                    <select class="form-control" name="tipoPlanilha" id="tipoPlanilha">
+                        <option name="Militares" value="Militares">Militares</option>
+                        <option name="Servidores" value="Servidores">Servidores</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="links-anos">Exercícios Disponíveis</label>
+                    <select class="form-control" name="links-anos" id="links-anos">
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="links-meses">Meses Disponíveis</label>
+                    <select  class="form-control" id="links-meses" style="text-transform: uppercase">
+                        <option value="01">Janeiro</option>
+                        <option value="02">Fevereiro</option>
+                        <option value="03">Março</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Maio</option>
+                        <option value="06">Junho</option>
+                        <option value="07">Julho</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" id="btn-baixar"><a target="_blank">Baixar</a></button>
+            </form>
+        </div>
+        <div class="col-6 col-sm-12">
+            <h2>Consulta de servidores agregados por órgão</h2>
+            <form method="POST" action="/" id=filtro>
+                <div class="form-group">
+                    <label for="tipoServidor">Tipo Servidor</label>
+                    <select class="form-control" name="tipoServidor" id="tipoServidor">
+                        <option value="1">Civil</option>
+                        <option value="2">Militar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tipoVinculo">Tipo Vinculo</label>
+                    <select class="form-control" name="tipoVinculo" id="tipoVinculo">
+                        <option value="1">Função</option>
+                        <option value="2">Cargo</option>
+                        <option value="3">Outros</option>
+                        <option value="4">Militares</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="licenca">Licença</label>
+                    <select class="form-control" name="licenca" id="licenca">
+                        <option value="0">Não</option>
+                        <option value="1">Sim</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" id="btn-filtro">Filtro</button>
+            </form>
+        </div>
+    </div>
+    <br>   
+</section>
