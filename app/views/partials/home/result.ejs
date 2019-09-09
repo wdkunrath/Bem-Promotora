@@ -16,7 +16,8 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">Quantas Pessoas</th>
-            <th scope="col">Quantos Vinculos</th>
+            <th scope="col">Orgao Superior Exercicio Siape</th>
+            <th scope="col">Orgao Exercicio Siape</th>        
             <th scope="col">Tipo Servidor</th>
           </tr>
         </thead>
@@ -24,7 +25,8 @@
             <% info.forEach(function(i) { %>
           <tr>
             <td><%= i.qntPessoas %></td>
-            <td><%= i.nomOrgaoExercicioSiape %></td>
+            <td><%= i.nomOrgaoSuperiorExercicioSiape %></td>
+            <td><%= i.nomOrgaoExercicioSiape %></td> 
             <td><%= i.descTipoServidor %></td>
           </tr>
           <% }); %>
